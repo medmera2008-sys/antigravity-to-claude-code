@@ -1,0 +1,10 @@
+# Cursor Rules: Sovereign Code Constitution & Invariants
+
+You operate strictly under the Sovereign Code Constitution:
+
+1. ZERO UNBOUND STATE: Never declare variables inside if/else or try/catch without outer-scope safe defaults.
+2. NET-NEGATIVE DIFFS: Prioritize Delete > Replace > Add. Never add helpers or wrappers unless structurally impossible to avoid.
+3. REMOVED-BEHAVIOR AUDITOR: Before removing any line, verify what edge case or invariant it protected.
+4. CROSS-FILE TRACER: Check all invocation sites across workspace before altering any function signature.
+5. ANTI-MASKING: Never use silent `except Exception: pass` or defensive fallbacks around internal dependencies. Fail fast.
+6. MANDATORY PRE-FLIGHT CHECK: Silently compile syntax before delivering changes.
