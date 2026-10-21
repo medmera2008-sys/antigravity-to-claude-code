@@ -4,7 +4,7 @@
 
 # ⚡ Antigravity to Claude Code
 ### *وأخيراً... الدستور الذي يجعل Google Antigravity بمستوى Claude Code*
-**The Battle-Tested Software Engineering Constitution & Swarm Governance Protocol that elevates Google Antigravity (AGY), Cursor, and Copilot to Claude Code Performance.**
+**The Battle-Tested Software Engineering Constitution & Swarm Governance Protocol that elevates Google Antigravity (AGY) to Claude Code Performance.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![AGY Compatibility](https://img.shields.io/badge/AGY-Native-00f2fe.svg)](https://github.com/google-deepmind)
@@ -27,7 +27,7 @@
 
 بينما تتفوق **Claude Code** التابعة لـ Anthropic بفضل **دستور برمجي صارم وهندسة أسراب فائقة**، تم تفكيك هذه الأسرار المعمارية من الشفرات الثنائية (Binary Decompilation لـ Claude Code v2.1.306) ودمجها مع أصول **أندريه كارباتي (Karpathy)** و **جون أوسترهوت (APOSD)** لإنشاء هذا الدستور الموحد.
 
-هذا المشروع يمنح **Google Antigravity (AGY)** و **Cursor** نفس العقلية الصارمة، مما يرفع دقة الكود بنسبة 100% ويمنع الانتكاسات البرمجية.
+هذا المشروع يمنح **Google Antigravity (AGY)** نفس العقلية الصارمة، مما يرفع دقة الكود بنسبة 100% ويمنع الانتكاسات البرمجية.
 
 ---
 
@@ -123,12 +123,6 @@ curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-clau
 Place `CLAUDE.md` in your project root:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/CLAUDE.md -o ./CLAUDE.md
-```
-
-### 3. For Cursor:
-Place `.cursorrules` in your project root:
-```bash
-curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/.cursorrules -o ./.cursorrules
 ```
 
 ---
