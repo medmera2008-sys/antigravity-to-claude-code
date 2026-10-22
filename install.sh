@@ -28,11 +28,17 @@ if [ "${LOCAL_MODE}" = true ]; then
   echo -e "[*] Local deployment detected..."
   cp -f "${SCRIPT_DIR}/rules/antigravity-to-claude-code.md" "${AGY_RULES_DIR}/antigravity-to-claude-code.md"
   cp -rf "${SCRIPT_DIR}/skills/code-constitution/"* "${AGY_SKILLS_DIR}/"
+  if [ -f "${HOME}/AGENTS.md" ]; then
+    cp -f "${HOME}/AGENTS.md" "${HOME}/AGENTS.md.bak"
+  fi
   cp -f "${SCRIPT_DIR}/AGENTS.md" "${HOME}/AGENTS.md"
 else
   echo -e "[*] Fetching sovereign specifications from repository..."
   curl -fsSL "${BASE_URL}/rules/antigravity-to-claude-code.md" -o "${AGY_RULES_DIR}/antigravity-to-claude-code.md"
   curl -fsSL "${BASE_URL}/skills/code-constitution/SKILL.md" -o "${AGY_SKILLS_DIR}/SKILL.md"
+  if [ -f "${HOME}/AGENTS.md" ]; then
+    cp -f "${HOME}/AGENTS.md" "${HOME}/AGENTS.md.bak"
+  fi
   curl -fsSL "${BASE_URL}/AGENTS.md" -o "${HOME}/AGENTS.md"
 fi
 

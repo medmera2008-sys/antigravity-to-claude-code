@@ -1,6 +1,6 @@
-# AGY Code Constitution
+# Antigravity to Claude Code: Sovereign Invariants & Swarm Governance
 
-## 1. Sovereign Code Hygiene (Zero-Tolerance Invariants)
+## 1. Zero-Tolerance Code Invariants
 - **INVARIANT 1 (Zero-Unbound State)**: NEVER assign variables inside conditional branches (`if`/`switch`/`match`) or `try`/`catch` blocks without outer-scope safe defaults (`None`, `0`, `""`, `[]`, `{}`, `false`, `nil`, `nullptr`). Exhaustive `else` fallback or early return guard required. Initialize all struct/object fields in constructors.
 - **INVARIANT 2 (Defensive Access)**: Verify existence before accessing attributes, keys, or slices (`obj.attr`, `d["k"]`, `a[0]`) using safe primitives (`.get()`, `?.`, `if val is not None:`, `!= nil`). Validate multi-return signatures immediately.
 - **INVARIANT 3 (Anti-Overengineering & Net-Negative Diffs)**: Three-Line Rule: 3 similar lines > premature abstraction. Bug fixes prefer deletion/simplification over addition. Zero unrequested features or helpers. Modify files in-place; delete dead code cleanly with zero compatibility shims.
