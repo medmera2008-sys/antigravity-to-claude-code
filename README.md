@@ -2,10 +2,17 @@
 
 ![Antigravity to Claude Code Banner](assets/banner.png)
 
+<p align="center">
+  <a href="https://x.com/medismera" target="_blank">
+    <img src="https://img.shields.io/badge/Author-@medismera-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow @medismera on X" />
+  </a>
+</p>
+
 # ⚡ Antigravity to Claude Code
 ### *وأخيراً... الدستور الذي يجعل Google Antigravity بمستوى Claude Code*
 **The Battle-Tested Software Engineering Constitution & Swarm Governance Protocol that elevates Google Antigravity (AGY) to Claude Code Performance.**
 
+[![Follow on X](https://img.shields.io/badge/X-@medismera-black?style=flat&logo=x&logoColor=white)](https://x.com/medismera)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![AGY Compatibility](https://img.shields.io/badge/AGY-Native-00f2fe.svg)](https://github.com/google-deepmind)
 [![Claude Code Provenance](https://img.shields.io/badge/Claude%20Code-v2.1.306%20Extracted-7928ca.svg)](https://anthropic.com)
@@ -124,6 +131,13 @@ Place `CLAUDE.md` in your project root:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/CLAUDE.md -o ./CLAUDE.md
 ```
+
+---
+
+## 👤 Author & Community
+
+Crafted with high-assurance software engineering by **[@medismera](https://x.com/medismera)**.  
+Connect, discuss, and share your benchmarks on X: **[https://x.com/medismera](https://x.com/medismera)**
 
 ---
 
