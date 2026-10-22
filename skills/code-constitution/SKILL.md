@@ -15,8 +15,6 @@ This specification defines the formal, language-agnostic software engineering co
 
 ## Pillar 1: Zero-Unbound State & Control Flow Completeness
 
-The root cause of over 80% of runtime exceptions across dynamic and static languages is unbound state resulting from branching control flow without outer-scope initialization.
-
 ### 1.1 Explicit Initialization Before Branching
 * **Invariant**: NEVER declare or assign a variable inside a conditional branch (`if`/`switch`/`match`) or exception block (`try`/`except`/`catch`) without explicitly binding it to a safe default in the outer enclosing scope.
 * **Safe Defaults Matrix**:
@@ -57,7 +55,7 @@ The root cause of over 80% of runtime exceptions across dynamic and static langu
 
 ## Pillar 2: The Karpathy Invariants & Surgical Execution
 
-Derived from Andrej Karpathy's software development heuristics and Claude Code's core philosophy.
+Derived from Andrej Karpathy's software development heuristics.
 
 ### 2.1 Think Before Coding
 * State explicit intent before touching code: identify the root cause, trace the call stack, and determine the exact AST nodes to modify.
@@ -80,9 +78,9 @@ Derived from Andrej Karpathy's software development heuristics and Claude Code's
 
 ---
 
-## Pillar 3: Multi-Angle Regression Auditing (Claude Code Lenses)
+## Pillar 3: Multi-Angle Regression Auditing
 
-When modifying existing code, apply the three specialized audit angles from Claude Code system mechanics before finalizing any diff.
+When modifying existing code, apply three specialized audit angles before finalizing any diff.
 
 ### 3.1 Angle B: The Removed-Behavior Auditor
 * **Rule**: Before deleting or replacing any lines of code, ask:
@@ -107,9 +105,9 @@ When modifying existing code, apply the three specialized audit angles from Clau
 
 ---
 
-## Pillar 4: Architectural Simplicity & Error Elimination (Ousterhout & ChainSafe)
+## Pillar 4: Architectural Simplicity & Error Elimination (Ousterhout)
 
-Derived from John Ousterhout (*A Philosophy of Software Design*) and ChainSafe's high-assurance invariants.
+Derived from John Ousterhout (*A Philosophy of Software Design*).
 
 ### 4.1 Define Errors Out of Existence
 * **Principle**: The best way to handle errors is to design APIs so that there is no error to handle.
@@ -245,7 +243,7 @@ Concurrent file modifications on the same directory cause race conditions, dirty
 ### 10.1 Workspace Mode Calculus
 When invoking subagents via `invoke_subagent`, choose the workspace mode deliberately:
 * **`inherit`** (Default): Use ONLY for read-only investigations, web research, or documentation lookups where no files will be written.
-* **`share`**: Creates a shared workspace attached to the underlying repository directory (identical to `git worktree` in Claude Code / `tengu_worktree_mode`). Use for independent branch operations and multi-file code modifications without duplicating heavy disk storage.
+* **`share`**: Creates a shared workspace attached to the underlying repository directory (an isolated worktree from the parent tree). Use for independent branch operations and multi-file code modifications without duplicating heavy disk storage.
 * **`branch`**: Creates a fully isolated workspace cloned/branched from the parent. Use for destructive testing, experimental refactors, or multi-step migrations where failures must not leak into the parent tree.
 
 ### 10.2 Subagent Write Boundary Guard

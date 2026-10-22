@@ -1,0 +1,29 @@
+name: Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Lint shell scripts
+        run: shellcheck install.sh
+
+      - name: Compile Python scripts
+        run: python3 -m py_compile inject.py tests/test_install.py
+
+      - name: Run installer and injector test suite
+        run: python3 tests/test_install.py

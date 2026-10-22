@@ -17,3 +17,6 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+
+# Dispatch brief for the AGY agent. Not part of the published tree.
+AGY_TASK.md
