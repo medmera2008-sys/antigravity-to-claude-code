@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
+# Antigravity to Claude Code: Sovereign Invariant Injector
+# Author: @medismera (https://x.com/medismera)
 set -euo pipefail
 
-WITH_HOME_AGENTS=false
-DRY_RUN=false
+BOLD='\033[1m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+NC='\033[0m'
 
-for arg in "$@"; do
-  case "$arg" in
-    --with-home-agents)
-      WITH_HOME_AGENTS=true
-      ;;
-    --dry-run)
-      DRY_RUN=true
-      ;;
-    -h|--help)
-      echo "Usage: $0 [--with-home-agents] [--dry-run]"
-      exit 0
-      ;;
-    *)
-      echo "Unknown option: $arg" >&2
-      exit 1
-      ;;
-  esac
-done
+echo -e "\n${BOLD}${CYAN}⚡ Antigravity to Claude Code: Sovereign Invariant Injector ⚡${NC}"
+echo -e "${CYAN}Engineered by @medismera${NC}\n"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
 LOCAL_MODE=false
@@ -33,64 +21,24 @@ AGY_RULES_DIR="${HOME}/.gemini/antigravity-cli/rules"
 AGY_SKILLS_DIR="${HOME}/.agents/skills/code-constitution"
 BASE_URL="https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main"
 
-RULE_SRC="${SCRIPT_DIR}/rules/antigravity-to-claude-code.md"
-SKILL_SRC="${SCRIPT_DIR}/skills/code-constitution/SKILL.md"
-AGENTS_SRC="${SCRIPT_DIR}/AGENTS.md"
-
-DEST_RULE="${AGY_RULES_DIR}/antigravity-to-claude-code.md"
-DEST_SKILL="${AGY_SKILLS_DIR}/SKILL.md"
-DEST_HOME_AGENTS="${HOME}/AGENTS.md"
-DEST_HOME_GEMINI="${HOME}/GEMINI.md"
-
-if [ "${DRY_RUN}" = true ]; then
-  echo "[dry-run] mkdir -p ${AGY_RULES_DIR}"
-  echo "[dry-run] mkdir -p ${AGY_SKILLS_DIR}"
-  if [ "${LOCAL_MODE}" = true ]; then
-    echo "[dry-run] cp ${RULE_SRC} ${DEST_RULE}"
-    echo "[dry-run] cp ${SKILL_SRC} ${DEST_SKILL}"
-  else
-    echo "[dry-run] fetch ${BASE_URL}/rules/antigravity-to-claude-code.md -> ${DEST_RULE}"
-    echo "[dry-run] fetch ${BASE_URL}/skills/code-constitution/SKILL.md -> ${DEST_SKILL}"
-  fi
-  if [ "${WITH_HOME_AGENTS}" = true ]; then
-    TIMESTAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-    if [ -e "${DEST_HOME_AGENTS}" ] || [ -L "${DEST_HOME_AGENTS}" ]; then
-      echo "[dry-run] cp ${DEST_HOME_AGENTS} ${DEST_HOME_AGENTS}.bak.${TIMESTAMP}"
-    fi
-    if [ "${LOCAL_MODE}" = true ]; then
-      echo "[dry-run] cp ${AGENTS_SRC} ${DEST_HOME_AGENTS}"
-    else
-      echo "[dry-run] fetch ${BASE_URL}/AGENTS.md -> ${DEST_HOME_AGENTS}"
-    fi
-    if [ ! -e "${DEST_HOME_GEMINI}" ] && [ ! -L "${DEST_HOME_GEMINI}" ]; then
-      echo "[dry-run] ln -s ${DEST_HOME_AGENTS} ${DEST_HOME_GEMINI}"
-    fi
-  fi
-  exit 0
-fi
-
 mkdir -p "${AGY_RULES_DIR}"
 mkdir -p "${AGY_SKILLS_DIR}"
 
 if [ "${LOCAL_MODE}" = true ]; then
-  cp -f "${RULE_SRC}" "${DEST_RULE}"
-  cp -f "${SKILL_SRC}" "${DEST_SKILL}"
+  echo -e "[*] Local deployment detected..."
+  cp -f "${SCRIPT_DIR}/rules/antigravity-to-claude-code.md" "${AGY_RULES_DIR}/antigravity-to-claude-code.md"
+  cp -rf "${SCRIPT_DIR}/skills/code-constitution/"* "${AGY_SKILLS_DIR}/"
+  cp -f "${SCRIPT_DIR}/AGENTS.md" "${HOME}/AGENTS.md"
 else
-  curl -fsSL "${BASE_URL}/rules/antigravity-to-claude-code.md" -o "${DEST_RULE}"
-  curl -fsSL "${BASE_URL}/skills/code-constitution/SKILL.md" -o "${DEST_SKILL}"
+  echo -e "[*] Fetching sovereign specifications from repository..."
+  curl -fsSL "${BASE_URL}/rules/antigravity-to-claude-code.md" -o "${AGY_RULES_DIR}/antigravity-to-claude-code.md"
+  curl -fsSL "${BASE_URL}/skills/code-constitution/SKILL.md" -o "${AGY_SKILLS_DIR}/SKILL.md"
+  curl -fsSL "${BASE_URL}/AGENTS.md" -o "${HOME}/AGENTS.md"
 fi
 
-if [ "${WITH_HOME_AGENTS}" = true ]; then
-  TIMESTAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-  if [ -e "${DEST_HOME_AGENTS}" ] || [ -L "${DEST_HOME_AGENTS}" ]; then
-    cp "${DEST_HOME_AGENTS}" "${DEST_HOME_AGENTS}.bak.${TIMESTAMP}"
-  fi
-  if [ "${LOCAL_MODE}" = true ]; then
-    cp -f "${AGENTS_SRC}" "${DEST_HOME_AGENTS}"
-  else
-    curl -fsSL "${BASE_URL}/AGENTS.md" -o "${DEST_HOME_AGENTS}"
-  fi
-  if [ ! -e "${DEST_HOME_GEMINI}" ] && [ ! -L "${DEST_HOME_GEMINI}" ]; then
-    ln -s "${DEST_HOME_AGENTS}" "${DEST_HOME_GEMINI}"
-  fi
+if [ ! -f "${HOME}/GEMINI.md" ]; then
+  ln -sf "${HOME}/AGENTS.md" "${HOME}/GEMINI.md"
 fi
+
+echo -e "\n${BOLD}${GREEN}✓ Injection Complete!${NC}"
+echo -e "Google Antigravity (AGY) is now bound to deterministic AST invariants and swarm protocols.\n"
