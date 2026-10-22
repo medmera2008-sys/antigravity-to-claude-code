@@ -47,6 +47,16 @@ def inject(target_workspace: Path, global_mode: bool = True):
                 shutil.copy2(item, global_skills_dir / item.name)
         print_status(f"Injected global skill: {global_skills_dir}")
 
+        # Global Invariant Manifest
+        dest_global_agents = home / "AGENTS.md"
+        shutil.copy2(agents_src, dest_global_agents)
+        print_status(f"Injected global manifest: {dest_global_agents}")
+
+        dest_gemini = home / "GEMINI.md"
+        if not dest_gemini.exists():
+            dest_gemini.symlink_to(dest_global_agents)
+            print_status(f"Symlinked manifest to GEMINI.md: {dest_gemini}")
+
     # 2. Workspace Injection (AGENTS.md)
     if target_workspace:
         target_workspace = target_workspace.resolve()
