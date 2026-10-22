@@ -96,16 +96,29 @@ Multi-agent coordination in AGY is governed by the following constraints:
 
 ---
 
-## 3. Deployment Instructions
+## 3. Automated Injection & Deployment
 
-### Google Antigravity (AGY / Gemini CLI)
-Deploy the invariant configuration into your active AGY environment:
+### Quick One-Line Automated Injection
+Inject the invariants and swarm governance directly into your global Antigravity engine with a single command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/AGENTS.md -o ~/AGENTS.md
+curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/install.sh | bash
 ```
 
-Alternatively, link `AGENTS.md` directly into your workspace root.
+### Python Targeted Injection
+For multi-repo or specific workspace installations:
+
+```bash
+git clone https://github.com/medmera2008-sys/antigravity-to-claude-code.git
+cd antigravity-to-claude-code
+python3 inject.py --workspace /path/to/project
+```
+
+### Injection Topology
+The injection engine binds the specification at three deterministic layers:
+1. **System Engine Layer**: Native rule injected into `~/.gemini/antigravity-cli/rules/antigravity-to-claude-code.md`.
+2. **Global Skill Layer**: Progressive manual injected into `~/.agents/skills/code-constitution/SKILL.md`.
+3. **Workspace Layer**: Micro-invariants bound directly into `AGENTS.md`.
 
 ---
 
