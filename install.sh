@@ -11,7 +11,11 @@ NC='\033[0m'
 echo -e "\n${BOLD}${CYAN}⚡ Antigravity to Claude Code: Sovereign Invariant Injector ⚡${NC}"
 echo -e "${CYAN}Engineered by @medismera${NC}\n"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
+SCRIPT_DIR=""
+if [ -n "${BASH_SOURCE[0]:-}" ]; then
+  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
+fi
+
 LOCAL_MODE=false
 if [ -n "${SCRIPT_DIR}" ] && [ -f "${SCRIPT_DIR}/rules/antigravity-to-claude-code.md" ]; then
   LOCAL_MODE=true
@@ -27,7 +31,7 @@ mkdir -p "${AGY_SKILLS_DIR}"
 if [ "${LOCAL_MODE}" = true ]; then
   echo -e "[*] Local deployment detected..."
   cp -f "${SCRIPT_DIR}/rules/antigravity-to-claude-code.md" "${AGY_RULES_DIR}/antigravity-to-claude-code.md"
-  cp -rf "${SCRIPT_DIR}/skills/code-constitution/"* "${AGY_SKILLS_DIR}/"
+  cp -rf "${SCRIPT_DIR}/skills/code-constitution/." "${AGY_SKILLS_DIR}/"
   if [ -f "${HOME}/AGENTS.md" ]; then
     cp -f "${HOME}/AGENTS.md" "${HOME}/AGENTS.md.bak"
   fi
