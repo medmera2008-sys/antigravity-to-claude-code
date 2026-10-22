@@ -1,146 +1,151 @@
 <div align="center">
 
-![Antigravity to Claude Code Banner](assets/banner.png)
+![Antigravity to Claude Code](assets/banner.png)
 
 <p align="center">
   <a href="https://x.com/medismera" target="_blank">
-    <img src="https://img.shields.io/badge/Author-@medismera-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow @medismera on X" />
+    <img src="https://img.shields.io/badge/Author-@medismera-000000?style=for-the-badge&logo=x&logoColor=white" alt="@medismera on X" />
   </a>
 </p>
 
-# ⚡ Antigravity to Claude Code
-### *وأخيراً... الدستور الذي يجعل Google Antigravity بمستوى Claude Code*
-**The Battle-Tested Software Engineering Constitution & Swarm Governance Protocol that elevates Google Antigravity (AGY) to Claude Code Performance.**
+# Antigravity to Claude Code
+### Deterministic AST Invariants & Swarm Orchestration Specification
 
-[![Follow on X](https://img.shields.io/badge/X-@medismera-black?style=flat&logo=x&logoColor=white)](https://x.com/medismera)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![AGY Compatibility](https://img.shields.io/badge/AGY-Native-00f2fe.svg)](https://github.com/google-deepmind)
-[![Claude Code Provenance](https://img.shields.io/badge/Claude%20Code-v2.1.306%20Extracted-7928ca.svg)](https://anthropic.com)
-[![Zero-Unbound Invariant](https://img.shields.io/badge/AST%20Precision-100%25-success.svg)](#)
-[![Token Overhead](https://img.shields.io/badge/Startup%20Cost-%3C%201.8k%20tokens-brightgreen.svg)](#)
-
----
-
-[English Overview](#-english-overview) • [المقدمة بالعربية](#-نبذة-عن-المشروع) • [The 8 Code Invariants](#-the-8-code-invariants) • [Swarm Governance](#-swarm-governance) • [Before vs After](#-before-vs-after-the-empirical-proof) • [Quickstart](#-quickstart--installation)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
+[![Runtime Target: AGY](https://img.shields.io/badge/Target-Google%20Antigravity-blue.svg)](#)
+[![Format: Pure Specification](https://img.shields.io/badge/Standard-Formal%20Invariants-black.svg)](#)
 
 ---
 
 </div>
 
-## 📖 نبذة عن المشروع (Overview)
+## Abstract
 
-معظم مطوري الذكاء الاصطناعي يعانون من مشكلة متكررة:
-> *"الوكيل البرمجي يهلوس، يترك متغيرات غير معرّفة، يكسر دوال سابقة عند التعديل، ويخفي الأخطاء بـ `try/catch` صامت!"*
+General-purpose Large Language Models operating in autonomous coding environments degrade due to three systemic defects:
+1. **Unbound execution state**: Variable assignment constrained to branching control paths without outer-scope initialization.
+2. **Behavioral regressions**: Silent removal of latent invariants during file modifications.
+3. **Context dilution**: Unstructured subagent fan-outs polluting the orchestrator's attention budget.
 
-بينما تتفوق **Claude Code** التابعة لـ Anthropic بفضل **دستور برمجي صارم وهندسة أسراب فائقة**، تم تفكيك هذه الأسرار المعمارية من الشفرات الثنائية (Binary Decompilation لـ Claude Code v2.1.306) ودمجها مع أصول **أندريه كارباتي (Karpathy)** و **جون أوسترهوت (APOSD)** لإنشاء هذا الدستور الموحد.
-
-هذا المشروع يمنح **Google Antigravity (AGY)** نفس العقلية الصارمة، مما يرفع دقة الكود بنسبة 100% ويمنع الانتكاسات البرمجية.
-
----
-
-## ⚡ The 8 Sovereign Code Invariants (Part I)
-
-Language-agnostic constraints governing the Abstract Syntax Tree (AST) across Python, Go, Rust, TypeScript, and C/C++:
-
-| Invariant | Name | The Strict Rule |
-| :--- | :--- | :--- |
-| **INVARIANT 1** | **Zero-Unbound State** | NEVER assign variables inside branching (`if`/`match`/`try`) without outer-scope safe defaults (`None`, `0`, `""`, `[]`, `nil`). Exhaustive `else` fallback required. |
-| **INVARIANT 2** | **Defensive Access** | Verify existence before indexing (`obj.attr`, `data["key"]`, `arr[0]`) using safe primitives (`.get()`, `?.`, nil checks). |
-| **INVARIANT 3** | **Net-Negative Diffs** | Prioritize **Delete > Replace > Add**. Three-Line Rule: 3 similar lines > premature abstraction. Zero unrequested helpers. |
-| **INVARIANT 4** | **Zero Comments Philosophy** | Default ZERO comments. Write comments ONLY for non-obvious WHY (hidden constraints, hardware bugs). Never explain WHAT code does. |
-| **INVARIANT 5** | **Anti-Masking & Fail-Fast** | Validate contracts ONLY at external system boundaries (network, I/O). Trust internal code. NEVER mask bugs with silent null/try-except fallbacks; fail fast. |
-| **INVARIANT 6** | **Blast Radius & Surgical Edits** | Reversible actions run freely. Destructive actions (`rm -rf`, `reset --hard`) require confirmation. Never use `git add .` blindly. |
-| **INVARIANT 7** | **Removed-Behavior Auditor** | Before deleting code lines, audit what invariant they enforced. First sentence must state any failure. Fabricated outcomes are bugs. |
-| **INVARIANT 8** | **Mandatory Pre-Flight Gate** | Run silent background syntax checks (`python3 -m py_compile`, `node --check`, `tsc --noEmit`, `cargo check`) before reporting done. |
+This repository provides the formal, language-agnostic software engineering specification and swarm orchestration protocol required to enforce deterministic execution in **Google Antigravity (AGY)**.
 
 ---
 
-## 🐝 Swarm Governance & Subagent Orchestration (Part II)
+## 1. Core Invariants (Part I: Code Hygiene)
 
-Extracted directly from Claude Code v2.1.306 subagent harness mechanics:
+All code generation and modification routines MUST satisfy these non-negotiable invariants prior to emission:
 
-* **`SWARM 1 (Never Delegate Understanding)`**: The orchestrator must prove understanding before delegating. Specify exact file paths, line ranges, and target AST conditions. Never say *"investigate and fix based on findings"*.
-* **`SWARM 2 (Workspace Isolation)`**: Heavy multi-file edits by subagents MUST use `share` (Git Worktree / `tengu_worktree_mode`) or `branch` workspace mode to eliminate merge conflicts.
-* **`SWARM 3 (Conclusion-Only Handback)`**: Subagents absorb thousands of lines but return only the distilled technical findings + exactly **ONE sentence summary** for the user. Zero raw file dumps into parent context.
-* **`SWARM 4 (Delegation Restraint)`**: Tasks touching fewer than 3 files are executed inline. Low spawn counts; never duplicate delegated searches.
-
----
-
-## 🔬 Before vs After: The Empirical Proof
-
-### ❌ The Classical AI Defect (Vulnerable Code):
-```python
-# The AI agent writes this branching logic:
-def process_batch(items, threshold=10):
-    if len(items) > threshold:
-        status = 200
-        msg = "Batch limit exceeded"
-    elif len(items) == 0:
-        status = 204
-    # If 0 < len(items) <= threshold -> CRASH: UnboundLocalError: status
-    
-    # Late-binding loop closure trap:
-    callbacks = [lambda: i * 2 for i in range(len(items))]  # All return final i!
-    
-    # Silent masking hiding architectural defect:
-    try:
-        critical_metric = 100 / (len(items) - 5)
-    except Exception:
-        critical_metric = None  # Silent failure propagates downstream!
+### INVARIANT 1: Zero-Unbound State
+```text
+∀ v ∈ OperationalVariables, InScope(v) ⟹ IsInitialized(v, SafeDefault, OuterScope)
 ```
+* Variables MUST NEVER be declared or bound inside conditional blocks (`if`, `switch`, `match`) or exception handlers (`try`, `except`, `catch`) without pre-binding to a typed zero-value default (`None`, `0`, `""`, `[]`, `{}`, `false`, `nil`, `nullptr`) in the outer enclosing scope.
+* Every branch assigning an operational variable requires an exhaustive `else` fallback or a preceding early return guard.
 
-### ✅ The Sovereign Constitution Invariant:
-```python
-def process_batch(items, threshold=10):
-    # INVARIANT 1: Zero-Unbound State with safe outer defaults
-    status = 0
-    msg = ""
-    if len(items) > threshold:
-        status = 200
-        msg = "Batch limit exceeded"
-    elif len(items) == 0:
-        status = 204
-        msg = "Empty batch"
-    else:
-        status = 200
-        msg = "Batch processed"
-    
-    # Early-binding closure:
-    callbacks = [lambda i=i: i * 2 for i in range(len(items))]
-    
-    # INVARIANT 5: Anti-Masking (Fail-Fast):
-    if len(items) == 5:
-        raise ZeroDivisionError("Batch size cannot be exactly 5")
-    critical_metric = 100 / (len(items) - 5)
-```
+### INVARIANT 2: Defensive Traversal
+* Nested lookups (`obj.attr`, `map[k]`, `arr[i]`, `ptr->val`) require explicit existence verification or safe-navigation primitives (`.get()`, `?.`, nil guards) prior to dereference.
+* Multi-return signatures (`val, err`, `Result<T, E>`) MUST be asserted immediately at the call site.
+
+### INVARIANT 3: Net-Negative Diffs & Three-Line Rule
+* Optimization and bug fixes strictly follow the hierarchy: **Delete redundant code > Replace in-place > Add new constructs as a last resort**.
+* *The Three-Line Rule*: Three similar lines in-place takes precedence over premature abstraction. Unsolicited helper functions, wrappers, and scaffolding are strictly prohibited.
+
+### INVARIANT 4: Zero Comment Policy
+* Baseline comment density is ZERO.
+* Comments are permissible ONLY to document non-obvious **WHY** (hardware constraints, memory barriers, upstream protocol bugs).
+* Never narrate WHAT code does. Never reference ticket numbers, tasks, or callers.
+
+### INVARIANT 5: Boundary Sanitization & Anti-Masking
+* Defensive validation is enforced exclusively at external system boundaries (network I/O, user input, filesystem ingestion).
+* Internal boundaries trust system invariants. Silent exception swallowing (`except: pass`) and defensive null fallbacks around internal dependencies are banned. Faults must fail fast.
+
+### INVARIANT 6: Blast Radius & Selective Staging
+* Reversible mutations (in-place edits, unit tests) execute freely. Destructive operations (`rm -rf`, `reset --hard`) require confirmation.
+* Git staging is strictly selective: `git add <explicit-file-path>`. Indiscriminate operations (`git add .`, `git add -A`) are banned.
+
+### INVARIANT 7: Removed-Behavior Verification
+* Prior to deleting or replacing code lines, the invariant or edge-case enforced by those lines must be identified. The refactored state must either preserve that invariant or prove its obsolescence.
+
+### INVARIANT 8: Mandatory Pre-Flight Verification Gate
+* Prior to reporting task completion, code must pass silent syntax/compilation validation:
+  - Python: `python3 -m py_compile <file>`
+  - TypeScript: `tsc --noEmit` / `node --check <file>`
+  - Go: `go vet ./...`
+  - Rust: `cargo check`
 
 ---
 
-## 🚀 Quickstart & Installation
+## 2. Swarm Governance (Part II: Multi-Agent Orchestration)
 
-This repository offers drop-in configuration files for your favorite agentic tools:
+Multi-agent coordination in AGY is governed by the following constraints:
 
-### 1. For Google Antigravity (AGY / Gemini CLI):
-Place `AGENTS.md` in your home directory or workspace root:
+### SWARM 1: Non-Delegated Understanding
+* The orchestrator MUST NEVER delegate conceptual synthesis. Vague prompts (`"investigate and fix based on findings"`) are prohibited.
+* Delegation prompts MUST prove prior understanding: specify exact target paths, line ranges, target AST conditions, and explicit negative constraints.
+
+### SWARM 2: Physical Workspace Isolation
+* Subagents performing multi-file modifications MUST execute within an isolated workspace mode (`share` / worktree or `branch`) to guarantee branch isolation and prevent working-tree corruption.
+
+### SWARM 3: Conclusion-Only Handback
+* Subagents absorb raw context independently and emit strictly a two-tier handback payload:
+  1. **Technical Report**: Exact files, line bounds, compiler exit codes, and commit hashes.
+  2. **User Summary**: Exactly ONE sentence relaying the operational outcome.
+* Raw file dumps and terminal logs must not cross the subagent boundary.
+
+### SWARM 4: Delegation Restraint
+* Tasks touching fewer than 3 files or resolvable within 4 tool calls MUST execute inline within the primary session. Subagents are reserved strictly for decoupled, parallel domains.
+
+---
+
+## 3. Deployment Instructions
+
+### Google Antigravity (AGY / Gemini CLI)
+Deploy the invariant configuration into your active AGY environment:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/AGENTS.md -o ~/AGENTS.md
 ```
 
-### 2. For Claude Code:
-Place `CLAUDE.md` in your project root:
-```bash
-curl -fsSL https://raw.githubusercontent.com/medmera2008-sys/antigravity-to-claude-code/main/CLAUDE.md -o ./CLAUDE.md
-```
+Alternatively, link `AGENTS.md` directly into your workspace root.
 
 ---
 
-## 👤 Author & Community
+## 4. International Specifications
 
-Crafted with high-assurance software engineering by **[@medismera](https://x.com/medismera)**.  
-Connect, discuss, and share your benchmarks on X: **[https://x.com/medismera](https://x.com/medismera)**
+<details>
+<summary><b>العربية (Arabic Specification Summary)</b></summary>
+<br>
+
+### الدستور الصارم لهندسة البرمجيات وحوكمة الأسراب في Google Antigravity
+
+تعتمد هذه الوثيقة على تحويل نماذج الذكاء الاصطناعي من التوليد العشوائي (Vibe Coding) إلى الالتزام الحتمي بشجرة النحو المجردة (AST Invariants):
+
+1. **الصفر-متغيرات مجهولة (`Zero-Unbound State`)**: منع تعريف أي متغير داخل تفرع شرطي دون تهيئة مسبقة بقيمة افتراضية في النطاق الخارجي مع تغطية شاملة لـ `else`.
+2. **أفضلية الحذف على الإضافة (`Delete > Replace > Add`)**: إصلاح الأخطاء يجب أن يفضل تقليص الكود وحذف الزوائد على استحداث دوال ومساعدات وهمية.
+3. **منع التعمية والفشل السريع (`Anti-Masking & Fail-Fast`)**: حظر استخدام `try/catch` الصامت داخلياً؛ التعقيم يكون فقط عند حدود النظام الخارجية، أما داخلياً يجب الفشل الفوري لكشف العيوب.
+4. **عدسة السلوك المحذوف (`Removed-Behavior Auditor`)**: التدقيق في أي سطر كود قبل حذفه لضمان عدم كسر الشروط الحدية السابقة.
+5. **حوكمة الأسراب (`Swarm Governance`)**: منع تفويض الفهم العام للوكيل الفرعي (تحديد المسارات والأسطر بدقة)، وإلزامه بإعادة الاستنتاجات فقط دون إغراق السياق بالملفات.
+
+</details>
+
+<details>
+<summary><b>한국어 (Korean Specification Summary)</b></summary>
+<br>
+
+### Google Antigravity를 위한 결정론적 AST 불변식 및 스웜 거버넌스 사양서
+
+본 명세서는 AI 에이전트의 불확정적 코드 생성(Vibe Coding)을 배제하고 엄격한 소프트웨어 공학 불변식을 강제하기 위한 규격입니다:
+
+1. **비바운드 상태 배제 (`Zero-Unbound State`)**: 외부 스코프에서 기본값 초기화 없이 조건문(`if`, `match`)이나 예외 블록 내에서 변수를 할당하는 행위를 전면 금지합니다.
+2. **삭제 우선 원칙 (`Delete > Replace > Add`)**: 버그 수정 시 불필요한 추상화나 헬퍼 함수를 추가하는 대신 기존 코드의 삭제 및 제자리 수정을 최우선합니다.
+3. **마스킹 금지 및 조기 실패 (`Anti-Masking & Fail-Fast`)**: 내부 결함을 은폐하는 빈 `try/catch` 블록을 금지하며, 외부 경계 검증 외의 내부 로직은 즉각적으로 실패(`Fail-Fast`)하도록 설계합니다.
+4. **삭제된 동작 검증 (`Removed-Behavior Auditor`)**: 코드 삭제 전 해당 라인이 보장하던 기존 불변식을 반드시 검증합니다.
+5. **스웜 거버넌스 (`Swarm Governance`)**: 오케스트레이터는 모호한 지시를 하위 에이전트에 위임할 수 없으며, 하위 에이전트는 독립된 작업 트리(`worktree`)에서 실행된 후 결론만 압축 전달해야 합니다.
+
+</details>
 
 ---
 
-## ⚖️ License
-Released under the permissive [MIT License](LICENSE).
-Built with sovereign software engineering principles for developers who demand deterministic zero-defect code.
+## 5. Author & License
+
+* **Author**: [@medismera](https://x.com/medismera)
+* **License**: [MIT License](LICENSE)
