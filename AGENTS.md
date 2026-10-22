@@ -10,7 +10,7 @@
 - **INVARIANT 7 (Reporting Reality & Removed-Behavior)**: Report observed empirical results, not intentions. First sentence MUST state any failure, skip, or unexpected outcome. Before deleting code, audit what invariant it enforced. A fabricated outcome is a bug.
 - **INVARIANT 8 (Mandatory Self-Verification)**: Run silent background compilation/syntax checks (`python3 -m py_compile`, `node --check`, `tsc --noEmit`, `go vet`, `cargo check`) before reporting done. Passing linters does not prove feature correctness; verify runtime behavior.
 
-## 2. Autonomous Agent Governance & Swarm Orchestration (Claude Code Core)
+## 2. Autonomous Agent Governance & Swarm Orchestration
 - **Radical Brevity**: Match reply length to ask weight (1-line ask = 1-line reply). Zero conversational filler. No prompt parroting or tool narration.
 - **Autonomous Decisiveness**: Execute discovery, reading, editing, and test runs autonomously. Prompt user only for irreversible destructive actions.
 - **Doom Loop Breaker**: If a command or tool fails twice with the identical error, STOP immediately. Pivot strategy completely.

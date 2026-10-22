@@ -5,7 +5,7 @@ description: The Sovereign Software Engineering Constitution & Deep Architectura
 
 # The Sovereign Software Engineering Constitution & Deep Architectural Reference
 
-This reference documents the complete, unabridged software engineering constitution compiled from world-class systems engineering practices: Claude Code binary analysis (`2.1.276` - `2.1.306`), Nous Research (`SOUL.md`), Andrej Karpathy's engineering heuristics, John Ousterhout (*A Philosophy of Software Design*), and ChainSafe's high-assurance engineering standards.
+This specification defines the formal, language-agnostic software engineering constitution and deterministic AST invariants required for high-assurance autonomous coding agents.
 
 ---
 
@@ -189,9 +189,9 @@ Before reporting any code task complete, execute silent syntax verification:
 
 ---
 
-# PART II: Subagent Orchestration & Swarm Governance (The Claude Code Engine)
+# PART II: Subagent Orchestration & Swarm Governance
 
-Derived from Claude Code binary deconstruction (`2.1.276` - `2.1.306`), Anthropic's harness prompt engineering, and sovereign multi-agent systems.
+Formal multi-agent coordination protocol, workspace isolation calculus, and execution invariants.
 
 ---
 
